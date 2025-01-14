@@ -1,0 +1,7 @@
+{
+  "name": "BarrelTracker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
