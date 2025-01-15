@@ -9,7 +9,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "gh-pages": " ionic build --prod -- --base-href https://NikoKolar.github.io/BarrelTracker/ && npx angular-cli-ghpages --branch=gh-pages --dir=www"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "@capacitor/status-bar": "6.0.2",
     "@ionic/angular": "^8.0.0",
     "@supabase/supabase-js": "^2.47.14",
+    "angular-cli-ghpages": "^2.0.3",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
