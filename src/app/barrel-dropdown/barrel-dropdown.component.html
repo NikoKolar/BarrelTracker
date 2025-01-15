@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="promptForBarrelName()">
+        <ion-icon slot="start" name="add"></ion-icon>
+        Dodaj sod
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-list>
+  <ion-item *ngFor="let barrel of barrels">
+    <ion-label>
+      <h2>Sod {{ barrel.name }}</h2>
+
+      <ion-button
+        fill="clear"
+        color="primary"
+        (click)="toggleBarrelLocations(barrel)"
+      >
+        <ion-icon
+          [name]="barrel.expanded ? 'chevron-up' : 'chevron-down'"
+        ></ion-icon>
+      </ion-button>
+
+      <ion-list *ngIf="barrel.expanded">
+        <ion-item *ngFor="let location of getDisplayedLocations(barrel)">
+          <ion-label>
+            <h3>{{ location.name }}</h3>
+            <p>{{ location.note }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item class="hover-cursor" (click)="addNewLocation(barrel)">
+          <ion-label>
+            <p>Dodaj novo lokacijo</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-label>
+  </ion-item>
+</ion-list>
